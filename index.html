@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<meta name="Description" content="The official site for Android developers. Provides the Android SDK and documentation for app developers and designers.">
+
+<link rel="shortcut icon" href="assets/images/SquashStatics_icon.png" />
+<title>SQUASH STATICS</title>
+
+<!-- BASIC APPMOBILE -->
+<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/appmobi.js"></script> 
+<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/xhr.js"></script> 
+<script type="text/javascript" charset="utf-8" src="http://localhost:58888/_appMobi/aUX.webSocial.js"></script> 
+<!--script type="text/javascript" charset="utf-8" src="js/Push.js"></script--> 
+
+<script type="text/javascript">
+	/* This function runs once the page is loaded, but appMobi is not yet active */
+	var init = function(){
+
+	};
+
+
+	window.addEventListener("load",init,false);  
+
+	/* This code prevents users from dragging the page */
+	var preventDefaultScroll = function(event) {
+	    event.preventDefault();
+	    window.scroll(0,0);
+	    return false;
+	};
+	document.addEventListener('touchmove', preventDefaultScroll, false);
+
+	/* This code is used to run as soon as appMobi activates */
+	var onDeviceReady=function(){
+	    //Size the display to 768px by 1024px
+	    AppMobi.display.useViewport(768,1024);
+
+
+	    //lock orientation
+	    AppMobi.device.setRotateOrientation("Landscape");
+	    AppMobi.device.setAutoRotate(false);
+
+		//hide splash screen
+		AppMobi.device.hideSplashScreen();	
+	};
+	document.addEventListener("appMobi.device.ready",onDeviceReady,false);    
+</script>
+
+
+
+<!-- BASIC STYLESHEETS -->
+<link rel="stylesheet" href="assets/css/css.css" title="roboto">
+<link href="assets/css/default.css" rel="stylesheet" type="text/css">
+
+
+<!-- homepage carousel -->
+<link href="assets/css/home.css" rel="stylesheet" type="text/css">
+
+<!-- BASIC JAVASCRIPT -->
+<script src="assets/js/global-libraries-combined.js" type="text/javascript"></script>
+<script src="assets/js/docs.js" type="text/javascript"></script>
+
+<!-- homepage carousel -->
+<script type="text/javascript" src="assets/js/carousel.js"></script>
+
+
+<!-- search -->
+<script src="assets/js/jsapi.js" type="text/javascript"></script>
+<script src="assets/js/search_autocomplete.js" type="text/javascript"></script>
+
+
+
+
+<script src="assets/js/navtree_data.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("/");
+  var basePath = getBaseUri(location.pathname);
+  var SITE_ROOT = toRoot + basePath.substring(1,basePath.indexOf("/",1));
+</script>
+
+</head>
+<body class="gc-documentation">
+<a name="top"></a>
+
+    <!-- Header -->
+    <div id="header">
+        <div class="wrap" id="header-wrap">
+          <div class="col-3 logo">
+          <a href="index.html">
+            <img src="assets/images/dac_logo.png" width="244" height="30" alt="Squash Statics" />
+          </a>
+          <div class="btn-quicknav" id="btn-quicknav">
+          	<a href="#" class="arrow-inactive">Quicknav</a>
+			<a href="#" class="arrow-active">Quicknav</a>
+          </div>
+          </div>
+            <ul class="nav-x col-9">
+                <li class="design"><a href="#">Estadisticas</a></li>
+                <li class="develop"><a href="#">Perfiles</a></li>
+                <li class="distribute last"><a href="#">Loging</a></li>
+            </ul>
+            
+            <!-- New Search -->
+            <div class="menu-container">
+            <div class="moremenu">
+    <div id="more-btn"></div>
+  </div>
+  <div class="morehover" id="moremenu">
+    <div class="top"></div>
+    <div class="mid">
+      <div class="header">Web Sites</div>
+      <ul>
+        <li><a href="Billboard.html">Patrocinantes</a></li>
+        <li class="active"><a>Otros</a></li>
+        <li><a href="#">Otros</a></li>
+      </ul>
+      <div class="header">Soporte</div>
+      <ul>
+        <li><a href="#">Jugadores</a></li>
+      </ul>
+      <div class="header">Idiomas</div>
+        <div id="language" class="locales">
+          <select name="language" onChange="changeLangPref(this.value, true)">
+              <option value="es">Español</option>
+              <!--option value="en">English</option>
+              <option value="ja">日本語</option>
+              <option value="ko">한국어</option>
+              <option value="ru">Русский</option>
+              <option value="zh-CN">中文 (中国)</option-->
+          </select>	
+        </div>
+      <script type="text/javascript">
+        <!--  
+        //loadLangPref();  
+          //-->
+      </script>
+      <br class="clearfix" />
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <div class="search" id="search-container">
+    <div class="search-inner">
+      <div id="search-btn"></div>
+      <div class="left"></div>
+      <form onsubmit="return submit_search()">
+        <input id="search_autocomplete" type="text" value="" autocomplete="off" 
+	       name="q" onfocus="search_focus_changed(this, true)" onblur="search_focus_changed(this, false)"
+               onkeydown="return search_changed(event, true, '/')" onkeyup="return search_changed(event, false,'/')" />
+      </form>
+      <div class="right"></div>
+        <a class="close hide">Cerrar</a>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+  </div>
+  <div id="search_filtered_wrapper">
+    <div id="search_filtered_div" class="no-display">
+        <ul id="search_filtered">
+        </ul>
+    </div>
+  </div>
+  
+  </div>
+  <!-- /New Search>
+          
+          
+          <!-- Expanded quicknav -->
+           <div id="quicknav" class="col-9">
+                <ul>
+                    <li class="design">
+                      <ul>
+                        <li><a href="#">Style</a></li>
+                        <li><a href="#">Patterns</a></li>
+                        <li><a href="#">Building Blocks</a></li>
+                        <li><a href="#">Downloads</a></li>
+                      </ul>
+                    </li>
+                    <li class="develop">
+                      <ul>
+                        <li><a href="#">Android Training</a></li>
+                        <li><a href="#">API Guides</a></li>
+                        <li><a href="#">Reference</a></li>
+                        <li><a href="#">Tools</a>
+                          <ul><li><a href="#">Get the SDK</a></li></ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="distribute last">
+                      <ul>
+                        <li><a href="#">Crear Usuario</a></li>
+                        <li><a href="#">Accesar</a></li>
+                      </ul>
+                    </li>
+                </ul>
+          </div>
+          <!-- /Expanded quicknav -->
+        </div>
+    </div>
+    <!-- /Header -->
+    
+    
+  <div id="searchResults" class="wrap" style="display:none;">
+          <h2 id="searchTitle">Resultados</h2>
+          <div id="leftSearchControl" class="search-control">Cargando...</div>
+  </div>
+    
+    
+    
+
+  
+
+  <div id="body-content">
+
+
+
+
+<div  >
+
+
+  
+
+
+  
+  <div id="jd-content">
+
+
+    <div class="jd-descr" itemprop="articleBody">
+    <div class="wrap">
+    <!-- Slideshow -->
+    <div class="slideshow-container slideshow-home col-16">
+        <a href="#" class="slideshow-prev">Anterior</a>
+        <a href="#" class="slideshow-next">Proximo</a>
+        <div class="frame">
+            <ul>
+                <li class="item carousel-home">
+                    <div class="content-left col-10">
+                        <img src="images/home/design.png" style="margin-top:30px">
+                    </div>
+                    <div class="content-right col-6">
+                    <h1>Crea tu Juego<br>Registra tus jugadas</h1>
+                    <p>Ahora podras tener las estaísticas en línea de tu juego para poder mejorar cada vez más..</p>
+                    <a href="#" class="button">Aprende Más</a>
+                    </div>
+                </li>
+                <li class="item carousel-home">
+                        <div class="content-left col-10">
+				<img src="images/home/google-io.png">
+                        </div>
+                        <div class="content-right col-6">
+                        <h1>Analiza tus Jugadas como un Profesional!</h1>
+                        <p>See the keynote and more than 20 Android developer sessions streamed live from Moscone Center in San Francisco. <div style="margin-top:-22px;">Begins June 27, 9AM PDT (UTC-7).</span></p>
+                        <a href="Analisis.html" class="button">Aprende Más</a>
+                        </div>
+                </li>
+                <li class="item carousel-home">
+                        <div class="content-left col-10">
+                            <img src="images/home/google-play.png" style="margin-top:50px">
+                        </div>
+                        <div class="content-right col-6">
+                        <h1>Publica<br>y comparte tus resultados.</h1>
+                        <p>The most visited store in the world for Android apps. Cloud-connected and always synced, it's never been easier for users to find and download your apps.</p>
+
+                        <a href="#" class="button">Aprende Más</a>
+                        </div> 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /End slideshow -->
+    
+    
+    
+</div>
+<!--div class="wrap" style="padding-bottom:20px">
+    <!-- Section links >
+    <div class="home-sections">
+        <ul>
+            <li><a href="about/index.html">About Android</a></li>
+            <li><a href="sdk/index.html">Get the SDK</a></li>
+            <li><a href="http://source.android.com">Open Source</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li class="last"><a href="legal.html">Legal</a></li>
+        </ul>
+    </div>
+    <!-- /Section links >
+</div>     
+
+
+    </div>
+      
+      <div class="content-footer wrap"  itemscope itemtype="http://schema.org/SiteNavigationElement">
+        <div class="layout-content-col col-16" style="padding-top:4px">
+          <style>#___plusone_0 {float:right !important;}</style>
+            <div class="g-plusone" data-size="medium"></div>
+          
+        </div>
+        
+        <div class="paging-links layout-content-col col-4">
+          
+        </div>
+        
+      </div>
+      
+      
+      
+
+  </div> <!-- end jd-content -->
+
+<div id="footer" class="wrap" style="width:940px">
+        
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="license.html">Content 
+  License</a>.
+  </div>
+
+
+</div> <!-- end footer -->
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+
+
+
+<!-- Grid - for dev 
+<script type="text/javascript">
+
+window.gOverride = {
+		gColor: '#FF0000',
+		pColor: '#EEEEEE',
+		gOpacity: 0.10,
+		pOpacity: 0.40,
+		pHeight: 16,
+		pOffset: 2,
+		gColumns:16,
+		gEnabled:false,
+		pEnabled:false
+	}
+</script>
+	
+<link href="/assets/js/grid/960.gridder.css" rel="stylesheet" type="text/css">
+<script src="/assets/js/grid/960.gridder.js" type="text/javascript"></script>
+-->
+
+
+
+
+<script type="text/javascript">
+$('.slideshow-container').dacSlideshow({
+    btnPrev: '.slideshow-prev',
+    btnNext: '.slideshow-next'
+});
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,49 @@
+#nutmeg1, #nutmeg2, #nutmeg3, #nutmeg4, #smallNutmeg, #numberedNutmeg, #labeledNutmeg { position: relative; cursor: pointer; width: 100%; }
+#nutmeg1, #nutmeg2, #nutmeg3, #nutmeg4 { cursor: pointer; }
+#smallNutmeg { width: 200px; }
+span.sparkle { background: url(../../images/playground/gold-unicorn.gif) no-repeat; width: 136px; height: 161px; }
+#serializedOutput span.wrap { padding: 10px; width: 100%; height: 100%; }
+div.highlight { margin-bottom: 18px; }
+
+
+/* Layer styles */
+span.layer { cursor: pointer; display: block; background: url(../../images/playground/notes-bg.png) no-repeat 0 0; width: 25px; height: 25px; font-size: 12px; font-weight: bold; line-height: 25px; letter-spacing: -1px; text-align: center; color: #fff; text-decoration: none; text-shadow: 0 1px 1px rgba(0,0,0,.15); }
+span.layer.circle.green   { background-position: 0px 0; }
+span.layer.circle.blue     { background-position: -25px 0; }
+span.layer.circle.purple { background-position: -50px 0; }
+span.layer.circle.red       { background-position: -75px 0; }
+span.layer.circle.orange { background-position: -100px 0; }
+span.layer.circle.yellow { background-position: -125px 0; }
+span.layer.circle.black   { background-position: -150px 0; }
+span.layer.circle.grey     { background-position: -175px 0; }
+span.layer.circle.transparent{ background-position: -200px 0; }
+
+/* Note styles */
+span.note { cursor: pointer; display: block; position: absolute; top: -2px; left: 0; z-index: 10; background: url(../../images/playground/notes-bg.png) no-repeat 0 0; width: 25px; height: 25px; font-size: 12px; font-weight: bold; line-height: 25px; letter-spacing: -1px; text-align: center; color: #fff; text-decoration: none; text-shadow: 0 1px 1px rgba(0,0,0,.15); }
+
+/* Note styles  Circle*/
+span.note.circle.green   { background-position: 0px 0; }
+span.note.circle.blue     { background-position: -25px 0; }
+span.note.circle.purple { background-position: -50px 0; }
+span.note.circle.red       { background-position: -75px 0; }
+span.note.circle.orange { background-position: -100px 0; }
+span.note.circle.yellow { background-position: -125px 0; }
+span.note.circle.black   { background-position: -150px 0; }
+span.note.circle.grey     { background-position: -175px 0; }
+span.note.circle.transparent{ background-position: -200px 0; }
+
+/* Note styles  Cube*/
+span.note.cube.green   { background-position: 0px -25px; }
+span.note.cube.blue     { background-position: -25px -25px; }
+span.note.cube.purpe   { background-position: -50px -25px; }
+span.note.cube.red       { background-position: -75px -25px; }
+span.note.cube.orange { background-position: -100px -25px; }
+span.note.cube.yellow { background-position: -125px -25px; }
+span.note.cube.black   { background-position: -150px -25px; }
+span.note.cube.grey     { background-position: -175px -25px; }
+span.note.cube.transparent{ background-position: -200px -25px; }
+
+
+span.set-label { display: block; width: 69px; height: 34px; background: url(../../images/playground/setup-label.png) no-repeat; position: absolute; }
+
+span.wrap { padding: 10px; }

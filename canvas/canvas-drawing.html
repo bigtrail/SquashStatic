@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Create HTML5 Canvas JavaScript Drawing App Example</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="canvas-drawing.js"></script>
+    
+<!-- Annotation plugin -->
+<script src="../assets/js/jquery.annotate.js"></script>
+<script>
+var blackNote_Color = 'black circle note';
+	$(document).ready(function(){
+	
+		$('#Borrar_nutmeg1').click(function() {
+			$('#nutmeg1 span').remove();
+		});
+		$('#Borrar_nutmeg2').click(function() {
+			$('#nutmeg2 span').remove();
+		});
+		$('#Borrar_nutmeg3').click(function() {
+			$('#nutmeg3 span').remove();
+		});
+		$('#Borrar_nutmeg4').click(function() {
+			$('#nutmeg4 span').remove();
+		});
+		
+		function blackNote() {
+			return $(document.createElement('span')).addClass( blackNote_Color )
+		}
+		
+		$('#nutmeg1').annotatableImage(blackNote);
+		$('#nutmeg2').annotatableImage(blackNote);
+		$('#nutmeg3').annotatableImage(blackNote);
+		$('#nutmeg4').annotatableImage(blackNote);
+		
+		$('#numberedNutmeg img').load(function(){
+			$('#numberedNutmeg').addAnnotations(function(annotation){
+				return $(document.createElement('span')).
+					addClass('black circle note').html(annotation.position);
+			},[
+					{x: 0.3875, y: 0.3246, position: 4}, 
+					{x: .57, y: .329, position: 2}
+				]
+			);
+		});
+		
+		$('#labeledNutmeg').annotatableImage(function(annotation){
+			return $(document.createElement('span')).
+				addClass('set-label');
+		}, {xPosition: 'left'});
+		
+		$('#serialize').click(function(event){
+			event.preventDefault();
+			
+			$('#serializedOutput ul').empty();
+			$.each($('#nutmeg span.note').seralizeAnnotations(), function(){
+				$('#serializedOutput ul').append($(document.createElement('li')).html('<strong>x:</strong> ' + this.x + ' <strong>y:</strong> ' + this.y + ' <strong>response_time:</strong> ' + this.response_time + 'ms'));
+			});
+
+		});
+		
+		$('#doItHansel').click(function(event){
+			event.preventDefault();
+			$('#smallNutmeg').addAnnotations(blackNote, $('#nutmeg span.note').seralizeAnnotations());
+		});
+		
+		
+	});
+	
+	function initZURB(){}
+</script>
+<link href="../assets/css/annotation.css" rel="stylesheet" type="text/css">
+    
+    
+    
+  </head>
+  <body><div id="nutmeg1">
+    <div id="canvasDiv"></div>
+    </div>
+    <script type="text/javascript"> $(document).ready(function() {
+    	 prepareCanvas();
+});</script>
+  </body>
+</html>
